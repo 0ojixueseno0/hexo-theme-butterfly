@@ -13,6 +13,8 @@ if !theme.disable_top_img && page.top_img !== false
     - var top_img = theme.index_img !== false ? theme.index_img || theme.default_top_img : false
   else if is_archive()
     - var top_img = theme.archive_img !== false ? theme.archive_img || theme.default_top_img : false
+  else if is_current('/diary')
+    - var top_img = theme.diary_img !== false ? theme.diary_img || theme.default_top_img : false
   else
     - var top_img = page.top_img || theme.default_top_img
 
@@ -45,6 +47,9 @@ header#page-header(class=isHomeClass style=bg_img)
             !=fragment_cache('social', function(){return partial('includes/header/social')})
       #scroll-down
         i.fas.fa-angle-down.scroll-down-effects
+    else if is_current('/diary')
+      #page-site-info
+        h1#site-title='日记'
     else
       #page-site-info
         h1#site-title=site_title
