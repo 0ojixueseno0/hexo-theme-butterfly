@@ -4,10 +4,16 @@ if theme.menu
       if typeof value !== 'object'
         .menus_item
           - const valueArray = value.split('||')
-          a.site-page(href=url_for(trim(valueArray[0])))
-            if valueArray[1]
-              i.fa-fw(class=trim(valueArray[1]))
-            span=' '+label
+          if valueArray.length >= 3
+            a.site-page(href=url_for(trim(config.site_local !== 'cn' ? valueArray[0] : valueArray[1])))
+              if valueArray[2]
+                i.fa-fw(class=trim(valueArray[2]))
+              span=' '+label
+          else
+            a.site-page(href=url_for(trim(valueArray[0])))
+              if valueArray[1]
+                i.fa-fw(class=trim(valueArray[1]))
+              span=' '+label
       else
         .menus_item
           - const labelArray = label.split('||')
