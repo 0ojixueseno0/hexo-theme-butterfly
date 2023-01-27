@@ -1,0 +1,455 @@
+#about-page
+  .author-box
+    .author-img
+      img.no-lightbox(src='/img/avatar.jpg')
+    .image-dot
+  p.p.center.logo.large 关于我
+  p.p.center.small 光阴如梦，昨日随风🎉
+  .author-content
+    .author-content-item.myInfoAndSayHello
+      .title1 嘿！你发现了一只可爱小狗👋
+      .title2
+        | 我是
+        span.inline-word 0o酱
+      .title1
+        | 是一名 Web全栈工程师、福瑞控、沙雕网友、音游人
+        span.hide-word 、
+        span.inline-word.hide-word LGBT（你看到了！）
+    .aboutsiteTips.author-content-item
+      .author-content-item-tips 追求
+      h2
+        | 源于
+        br
+        | 热爱而去
+        span.inline-word 感受
+        .mask
+          span.first-tips 学习
+          |
+          span 生活
+          |
+          span(data-up) 程序
+          |
+          span(data-show) 体验
+
+  .hello-about
+    .cursor(style='translate:none;rotate:none;scale:none;transform:translate(721px,180px)')
+    .shapes
+      .shape.shape-1(style='translate:none;rotate:none;scale:none;transform:translate(721px,180px)')
+      .shape.shape-2(style='translate:none;rotate:none;scale:none;transform:translate(721px,180px)')
+      .shape.shape-3(style='translate:none;rotate:none;scale:none;transform:translate(721px,180px)')
+    .content
+      h1 Hi There!
+
+  .author-content
+    .author-content-item.skills
+      .card-content
+        .author-content-item-tips 技能
+        span.author-content-item-title 技术力
+        .skills-style-group
+          .tags-group-all
+            .tags-group-wrapper
+              each i in site.data.creativity
+                - const evenNum = i.creativity_list.filter((x, index) => index % 2 === 0);
+                - const oddNum = i.creativity_list.filter((x, index) => index % 2 === 1);
+                each item, index in i.creativity_list
+                  if ((index+1 <= evenNum.length) && (index+1 <= oddNum.length))
+                    .tags-group-icon-pair
+                      .tags-group-icon(style=`background: ${evenNum[index].color}`)
+                        img.no-lightbox(title=evenNum[index].name, src=evenNum[index].icon)
+                      .tags-group-icon(style=`background: ${oddNum[index].color}`)
+                        img.no-lightbox(title=oddNum[index].name, src=oddNum[index].icon)
+          .skills-list
+            each i in site.data.creativity
+              each item, index in i.creativity_list
+                .skill-info
+                  .skill-icon(style=`background: ${item.color}`)
+                    img.no-lightbox(title=item.name, src=item.icon)
+                  .skill-name
+                    span=item.name
+            .etc ...
+    .author-content-item.careers
+      .card-content
+        .author-content-item-tips 生涯
+        span.author-content-item-title 学无止境
+        .careers-group
+          .careers-item
+            .circle(style='background:#357ef5')
+            .name EDU 软件工程专业
+        img.author-content-img.no-lightbox(alt='生涯', src='/img/edu.png')
+
+  .author-content
+    .about-statistic.author-content-item
+      .card-content
+        .author-content-item-tips 数据
+        span.author-content-item-title 访问统计
+        #statistic
+        .post-tips
+          | 统计信息来自 
+          a(href='https://invite.51.la/1PlirH1XM?target=V6', target='_blank', rel='noopener nofollow') 51la网站统计
+        .banner-button-group
+          a.banner-button(onclick='pjax.loadUrl("/archives/")', data-pjax-state)
+            i.fa-solid.fa-paper-plane
+            |
+            span.banner-button-text 时光机
+    .author-content-item-group.column.mapAndInfo
+      .author-content-item.map.single
+        span.map-title
+          | 我现在住在 
+          b 中国，扬州市
+      .author-content-item.selfInfo.single
+        div
+          span.selfInfo-title 生于
+          |
+          span.selfInfo-content(style='color:#43a6c6') 2004
+        div
+          span.selfInfo-title 星座
+          |
+          span.selfInfo-content(style='color:#2c51db') 水瓶座
+        div
+          span.selfInfo-title 专业
+          |
+          span.selfInfo-content(style='color:#b04fe6') 软件工程
+
+  .author-content
+    .author-content-item.personalities
+      .author-content-item-tips 性格
+      span.author-content-item-title 调停者
+      .title2(style='color:#33a474') INFP-T
+      .post-tips
+        | 在 
+        a(href='https://www.16personalities.com/', target='_blank', rel='noopener nofollow') 16Personalities 
+        | 了解关于 
+        a(target='_blank', rel='noopener external nofollow', href='https://www.16personalities.com/ch/infp-%E4%BA%BA%E6%A0%BC') 调停者 
+        | 的更多信息
+      .image
+        img.no-lightbox(src='/img/infp-t.png')
+    .author-content-item.myphoto
+      img.author-content-img.no-lightbox(alt='img', src='https://image.im0o.top/gitee/img/20210809123645.jpg')
+  
+  .author-content
+    .author-content-item(style='position: relative; width:49%; height: 400px')
+      .author-content-item-tips 设定 
+      span.author-content-item-title 丘酱 
+      .title2
+        | 是一只 
+        span(style='color:#f47e2c; font-size: 1.1rem; font-weight: bold') 狐狸 
+        | + 
+        span(style='color:#f47e2c; font-size: 1.1rem; font-weight: bold') 南瓜柴犬 
+        | = 
+        span(style='color:#f47e2c; font-size: 1.3rem; font-weight: bold') 柴狐
+      .post-tips
+          | 设定已在湖北省进行作品登记
+      .image(style='position: absolute; right: 30px; top: 10px;')
+          img.no-lightbox(src='/img/qiochan.png', style='width: 240px;')
+    .author-content-item(style='position: relative; width:49%; height: 400px').myphoto
+      img.author-content-img.no-lightbox(alt='img', src='/img/single.webp')
+    
+
+
+  .author-content
+    .author-content-item.maxim
+      .author-content-item-tips 座右铭
+      span.maxim-title
+        span(style='opacity:.6;margin-bottom:8px') 光阴如梦，
+        |
+        span 昨日随风。
+    .author-content-item.buff
+      .card-content
+        .author-content-item-tips 特长
+        span.buff-title
+          span(style='opacity:.6;margin-bottom:8px')
+            | 经典CV
+            span.inline-word 工程师
+          |
+          span
+            | 面向 ChatGPT 
+            span.inline-word 编程
+      .card-background-icon
+        i.fa-solid.fa-dice-d20
+
+  .author-content
+    .author-content-item.game-minecraft
+      .card-content
+        .author-content-item-tips 爱好游戏
+        span.author-content-item-title Minecraft
+        .content-bottom
+          .tips.game-minecraft-uid ID: 0ojixueseno0; Jz0ojiang
+    .author-content-item.comic-content
+      .card-content
+        .author-content-item-tips 哔哩哔哩
+        span.author-content-item-title 0o酱
+        .content-bottom
+          .banner-button-group
+            a.banner-button(onclick='window.open("https://space.bilibili.com/581170740")', data-pjax-state)
+              i.fa-solid.fa-play
+              |
+              span.banner-button-text 串个门
+
+  .author-content
+    .author-content-item.like-technology
+      .card-content
+        .author-content-item-tips 关注偏好
+        span.author-content-item-title Minecraft 技术
+        |
+        span.author-content-item-title 数据恢复
+        |
+        span.author-content-item-title Web 全栈
+        .content-bottom
+          .tips Minecraft: 数据包、插件、模组、材质包
+    .author-content-item.like-music
+      .card-content
+        .author-content-item-tips 音乐偏好
+        span.author-content-item-title 纯音乐
+        |
+        span.author-content-item-title 蓝调、爵士
+        |
+        span.author-content-item-title 二次元
+        .content-bottom
+          .tips 和 0o酱 一起分享耳机
+        .banner-button-group
+          a.banner-button(onclick='window.open("https://music.163.com/playlist?id=578739560&userid=406790255")', data-pjax-state)
+            i.fa-solid.fa-music
+            |
+            span.banner-button-text 更多推荐
+
+  .author-content
+    .create-site-post.author-content-item.single
+      .author-content-item-tips Wakatime
+      h1(style="line-height: 1;text-align: center;") 使用过的语言 | Powerd by Wakatime
+      figure(style='text-align: center;')
+        embed(src="https://wakatime.com/share/@Jz0ojiang/39651027-001a-4cd9-a854-2d49dba62548.svg", style='height: 500px;')
+  .author-content
+    .create-site-post.author-content-item.single
+      //- .author-content-item-tips 说点什么
+      != page.content
+
+  .author-content
+    .author-content-item.single.reward
+      .author-content-item-tips 致谢
+      span.author-content-item-title 赞赏名单
+      .author-content-item-description 因为有你，让我更有创作动力
+        each i in site.data.reward
+          - let rawData = [...i.reward_list]
+          .reward-list-all
+            - let reward_list_amount = i.reward_list.sort((a,b)=>b.amount -  a.amount)
+            each item, index in reward_list_amount
+              .reward-list-item
+                if item.message
+                  .reward-list-item-name=item.name
+                else
+                  .reward-list-item-name(style="font-size:1.1rem")=item.name
+                span= item.message ? item.message : ""
+                .reward-list-bottom-group
+                  if item.amount >= 50
+                    .reward-list-item-money(style='background:#f47e2c')=`¥${item.amount}`
+                  else
+                    .reward-list-item-money=`¥${item.amount + (item.suffix ? item.suffix : "")}`
+                  .datatime.reward-list-item-time(datatime=item.datatime)=new Date(item.datatime).toISOString().slice(0, -14)
+          .reward-list-updateDate
+            | 更新时间：
+            time.datatime.reward-list-updateDate-time(datatime=rawData[0].datatime)=new Date(rawData[0].datatime).toISOString().slice(0, -14)
+      .post-reward
+        #con
+        #TA-con(type='button', onclick='reward()')
+          #text-con(style='')
+            i.fa-solid.fa-bolt-lightning(style="color:#FFF;line-height: 50px;font-size:20px;margin: 2px 0 0 -10px")
+            #TA 为TA充电
+        #tube-con
+          svg(viewBox='0 0 1028 385', fill='none', xmlns='http://www.w3.org/2000/svg')
+            path(d='M1 77H234.226L307.006 24H790', stroke='#e5e9ef', stroke-width='20')
+            path(d='M0 140H233.035L329.72 71H1028', stroke='#e5e9ef', stroke-width='20')
+            path(d='M1 255H234.226L307.006 307H790', stroke='#e5e9ef', stroke-width='20')
+            path(d='M0 305H233.035L329.72 375H1028', stroke='#e5e9ef', stroke-width='20')
+            rect(y='186', width='236', height='24', fill='#e5e9ef')
+            ellipse(cx='790', cy='25.5', rx='25', ry='25.5', fill='#e5e9ef')
+            circle(r='14', transform='matrix(1 0 0 -1 790 25)', fill='white')
+            ellipse(cx='790', cy='307.5', rx='25', ry='25.5', fill='#e5e9ef')
+            circle(r='14', transform='matrix(1 0 0 -1 790 308)', fill='white')
+          #mask
+            svg(viewBox='0 0 1028 385', fill='none', xmlns='http://www.w3.org/2000/svg')
+              path(d='M1 77H234.226L307.006 24H790', stroke='#f25d8e', stroke-width='20')
+              path(d='M0 140H233.035L329.72 71H1028', stroke='#f25d8e', stroke-width='20')
+              path(d='M1 255H234.226L307.006 307H790', stroke='#f25d8e', stroke-width='20')
+              path(d='M0 305H233.035L329.72 375H1028', stroke='#f25d8e', stroke-width='20')
+              rect(y='186', width='236', height='24', fill='#f25d8e')
+              ellipse(cx='790', cy='25.5', rx='25', ry='25.5', fill='#f25d8e')
+              circle(r='14', transform='matrix(1 0 0 -1 790 25)', fill='white')
+              ellipse(cx='790', cy='307.5', rx='25', ry='25.5', fill='#f25d8e')
+              circle(r='14', transform='matrix(1 0 0 -1 790 308)', fill='white')
+          #orange-mask
+            svg(viewBox='0 0 1028 385', fill='none', xmlns='http://www.w3.org/2000/svg')
+              path(d='M1 77H234.226L307.006 24H790', stroke='#ffd52b', stroke-width='20')
+              path(d='M0 140H233.035L329.72 71H1028', stroke='#ffd52b', stroke-width='20')
+              path(d='M1 255H234.226L307.006 307H790', stroke='#ffd52b', stroke-width='20')
+              path(d='M0 305H233.035L329.72 375H1028', stroke='#ffd52b', stroke-width='20')
+              rect(y='186', width='236', height='24', fill='#ffd52b')
+              ellipse(cx='790', cy='25.5', rx='25', ry='25.5', fill='#ffd52b')
+              circle(r='14', transform='matrix(1 0 0 -1 790 25)', fill='white')
+              ellipse(cx='790', cy='307.5', rx='25', ry='25.5', fill='#ffd52b')
+              circle(r='14', transform='matrix(1 0 0 -1 790 308)', fill='white')
+          p#people
+            | 共
+            b !{site.data.reward[0].reward_list.length}
+            | 人
+script(src="/js/countup.js" type="text/javascript")
+script(src="https://unpkg.com/sweetalert2@11.6.16/dist/sweetalert2.all.min.js")
+script.
+  function reward(){
+    Swal.fire({
+      title: '<strong>您正在为 <u>0o酱</u> 充电</strong>',
+      html: '<p>请选择您的付款方式</p><p>付款留言将会显示在充电榜上</p>',
+      icon: 'info',
+      showCancelButton: true,
+      confirmButtonText:
+        '<i class="fa-brands fa-alipay"></i> 支付宝',
+      cancelButtonText:
+        '<i class="fa-brands fa-weixin"></i> 微信支付',
+      confirmButtonColor: '#1677FF',
+      cancelButtonColor: '#2AAE67',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: '感谢您',
+          html: '请打开支付宝 <b>[扫一扫]</b> 以充电',
+          imageUrl: '/img/alipay.png',
+          imageWidth: 175,
+          imageHeight: 175,
+          imageAlt: 'Custom image'
+        }).then((result) => {
+          Swal.fire(
+            '充电成功',
+            '感谢您的支持',
+            'success'
+          )
+        })
+      } else if (
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        Swal.fire({
+          title: '感谢您',
+          html: '请打开微信 <b>[扫一扫]</b> 以充电',
+          imageUrl: '/img/wxpay.png',
+          imageWidth: 175,
+          imageHeight: 175,
+          imageAlt: 'Custom image'
+        }).then((result) => {
+          Swal.fire(
+            '充电成功',
+            '感谢您的支持',
+            'success'
+          )
+        })
+      }
+    })
+  }
+script(src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/gsap.min.js")
+script.
+  (() => {
+    function isInViewPortOfOne(el) {
+      if (!el) return;
+      const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      const offsetTop = el.offsetTop;
+      const scrollTop = document.documentElement.scrollTop;
+      const top = offsetTop - scrollTop;
+      return top <= viewPortHeight;
+    }
+    fetch('https://v6-widget.51.la/v6/Jx91czhSN3bbiZjC/quote.js').then(res => res.text()).then((data) => {
+        let title = ['最近活跃', '今日人数', '今日访问', '昨日人数', '昨日访问', '本月访问', '总访问量']
+        let num = data.match(/(<\/span><span>).*?(\/span><\/p>)/g)
+
+        num = num.map((el) => {
+          let val = el.replace(/(<\/span><span>)/g, '')
+          let str = val.replace(/(<\/span><\/p>)/g, '')
+          return str
+        })
+
+        let statisticEl = document.getElementById('statistic')
+
+        // 自定义不显示哪个或者显示哪个，如下为不显示 最近活跃访客 和 总访问量
+        let statistic = []
+        for (let i = 0; i < num.length; i++) {
+            if (!statisticEl) return
+            if (i == 0 || i == num.length - 1) continue;
+            statisticEl.innerHTML += '<div><span>' + title[i] + '</span><span id='+ title[i] + '>' + num[i] + '</span></div>'
+            queueMicrotask(()=> {
+              statistic.push(new CountUp(title[i], 0, num[i], 0, 2, {
+                  useEasing: true,
+                  useGrouping: true,
+                  separator: ',',
+                  decimal: '.',
+                  prefix: '',
+                  suffix: ''
+              }))
+            })
+        }
+
+        function statisticUP () {
+          let statisticElment = document.querySelector('.about-statistic.author-content-item');
+          if(isInViewPortOfOne(statisticElment)) {
+            for (let i = 0; i < num.length; i++) {
+              if (i == 0 || i == num.length - 1) continue;
+              statistic[i-1].start();
+            }
+            document.removeEventListener('scroll', throttleStatisticUP);
+          }
+        }
+
+        const selfInfoContentYear = new CountUp('selfInfo-content-year', 0, 2002, 0, 2, {
+          useEasing: true,
+          useGrouping: false,
+          separator: ',',
+          decimal: '.',
+          prefix: '',
+          suffix: ''
+        })
+
+        function scrollSelfInfoContentYear() {
+          let selfInfoContentYearElment = document.querySelector('.author-content-item.selfInfo.single');
+          if (selfInfoContentYearElment && isInViewPortOfOne(selfInfoContentYearElment)) {
+            selfInfoContentYear.start()
+            document.removeEventListener('scroll', throttleScrollSelfInfoContentYear);
+          }
+        }
+        const throttleStatisticUP = btf.throttle(statisticUP, 200)
+        document.addEventListener('scroll', throttleStatisticUP, {passive: true})
+
+        const throttleScrollSelfInfoContentYear = btf.throttle(scrollSelfInfoContentYear, 200)
+        document.addEventListener('scroll', throttleScrollSelfInfoContentYear, {passive: true})
+    });
+
+    var pursuitInterval = null;
+      pursuitInterval = setInterval(function () {
+        const show = document.querySelector('span[data-show]')
+        const next = show.nextElementSibling || document.querySelector('.first-tips')
+        const up = document.querySelector('span[data-up]')
+
+        if (up) {
+          up.removeAttribute('data-up')
+        }
+
+        show.removeAttribute('data-show')
+        show.setAttribute('data-up', '')
+
+        next.setAttribute('data-show', '')
+      }, 2000)
+
+      document.addEventListener('pjax:send', function(){
+        clearInterval(pursuitInterval);
+      });
+
+      var helloAboutEl = document.querySelector('.hello-about')
+      helloAboutEl.addEventListener("mousemove", evt => {
+        const mouseX = evt.offsetX;
+        const mouseY = evt.offsetY;
+        gsap.set(".cursor", {
+          x: mouseX,
+          y: mouseY,
+        })
+
+        gsap.to(".shape", {
+          x: mouseX,
+          y: mouseY,
+          stagger: -0.1
+        })
+      })
+  })()
