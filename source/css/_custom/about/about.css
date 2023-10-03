@@ -775,7 +775,7 @@ filter: none !important;
 .author-content-item.like-music {
   background: url(https://image.im0o.top/furry/furryart_42.png) no-repeat center;
   background-size: cover;
-  /* min-height: 400px; */
+  min-height: 230px;
   color: var(--jz0ojiang-white);
   overflow: hidden;
 }
