@@ -1,6 +1,6 @@
-if theme.nav
+if theme.nav_items
   .nav_items
-    each value, label in theme.nav
+    each value, label in theme.nav_items
       if typeof value !== 'object'
         .nav_item
           - const valueArray = value.split('||')
